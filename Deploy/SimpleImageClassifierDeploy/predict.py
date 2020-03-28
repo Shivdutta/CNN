@@ -27,11 +27,9 @@ class dogcat:
         test_image = np.expand_dims(test_image, axis = 0)
         result = model.predict(test_image)
 
-        if result[0][0] == 1:
-            prediction = 'dog'
+        if result[0][0] == 0:
+            prediction = 'Shiv'
             return [{ "image" : prediction}]
         else:
-            prediction = 'cat'
+            prediction = 'Siddhant'
             return [{ "image" : prediction}]
-
-

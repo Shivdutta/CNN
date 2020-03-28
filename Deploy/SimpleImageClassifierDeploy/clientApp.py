@@ -16,7 +16,7 @@ CORS(app)
 #@cross_origin()
 class ClientApp:
     def __init__(self):
-        self.filename = "inputImage.jpg"
+        self.filename = "IMG_3011.jpg"
         self.classifier = dogcat(self.filename)
 
 
@@ -37,8 +37,9 @@ def predictRoute():
     return jsonify(result)
 
 
-port = int(os.getenv("PORT"))
+#port = int(os.getenv("PORT"))
 if __name__ == "__main__":
     clApp = ClientApp()
-    app.run(host='0.0.0.0', port=port)
+    app.run()
+    #app.run(host='0.0.0.0', port=port)
     #app.run(host='0.0.0.0', port=5000, debug=True)
